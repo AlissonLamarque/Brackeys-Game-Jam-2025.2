@@ -9,9 +9,6 @@ signal change_scene_requested(scene_to_load: PackedScene)
 func _on_start_pressed() -> void:
 	change_scene_requested.emit(game_scene)
 
-func _on_credits_pressed() -> void:
-	pass # Replace with function body.
-
 func _on_quit_pressed() -> void:
 	timer.start()
 

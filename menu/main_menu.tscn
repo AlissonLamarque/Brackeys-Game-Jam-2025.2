@@ -24,34 +24,49 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(9.8668e-07, 0.256257, 0.312105, 1)
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -459.0
-offset_top = 200.0
-offset_right = 459.0
-offset_bottom = 372.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_f5okj")
-theme_override_font_sizes/font_size = 200
-text = "Submarine"
-horizontal_alignment = 1
-
-[node name="ButtonContainer" type="VBoxContainer" parent="."]
+[node name="TitleContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -166.5
-offset_top = 160.0
-offset_right = 166.5
-offset_bottom = 446.0
+offset_left = -717.5
+offset_top = -340.0
+offset_right = 717.5
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="TitleContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_f5okj")
+theme_override_font_sizes/font_size = 160
+text = "Submarine"
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="TitleContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o5w3e")
+theme_override_font_sizes/font_size = 30
+text = "Made by 
+Alisson Lamarque"
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -280.0
+offset_right = 168.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_constants/separation = 50
 
 [node name="Start" type="Button" parent="ButtonContainer"]
@@ -61,24 +76,8 @@ theme_override_font_sizes/font_size = 80
 text = "Start"
 flat = true
 
-[node name="Credits" type="Button" parent="ButtonContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_o5w3e")
-theme_override_font_sizes/font_size = 80
-text = "Credits"
-flat = true
-
-[node name="Quit" type="Button" parent="ButtonContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_o5w3e")
-theme_override_font_sizes/font_size = 80
-text = "Quit"
-flat = true
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
 
 [connection signal="pressed" from="ButtonContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="ButtonContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="ButtonContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

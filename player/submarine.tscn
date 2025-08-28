@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cux4gccndppd3"]
+
+[ext_resource type="Script" uid="uid://blxxjtubqdnes" path="res://player/submarine.gd" id="1_dxof4"]
+[ext_resource type="Texture2D" uid="uid://besg8phdpx0mk" path="res://icon.svg" id="1_gsmwc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxof4"]
+size = Vector2(116.951, 117.027)
+
+[node name="Submarine" type="RigidBody2D"]
+gravity_scale = 0.5
+linear_damp = 1.0
+angular_damp = 1.5
+script = ExtResource("1_dxof4")
+forca_manobra = 1000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_gsmwc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.500423, 0.488665)
+rotation = -0.00042774
+shape = SubResource("RectangleShape2D_dxof4")
